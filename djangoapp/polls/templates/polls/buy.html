@@ -1,0 +1,125 @@
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/polls/style.css" />
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<form class="form-horizontal" action="/polls/payment/" method="post">
+		{% csrf_token %}
+			<fieldset>
+
+
+            <div class="form-group">
+				<div>
+				    <h2>Address Form</h2>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="fullname">Name</label>  
+			  <div class="col-md-5">
+			  <input id="fullname" name="fullname" type="text" placeholder="Full Name" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_email">Email</label>  
+			  <div class="col-md-5">
+			  <input id="buy_email" name="buy_email" type="text" placeholder="example@example.com" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_mobile">Mobile</label>  
+			  <div class="col-md-4">
+			  <input id="buy_mobile" name="buy_mobile" type="text" placeholder="9910220845" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_address1">Address</label>  
+			  <div class="col-md-5">
+			  <input id="buy_address1" name="buy_address1" type="text" placeholder="Flat/House No Colony/Street" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_address2"></label>  
+			  <div class="col-md-4">
+			  <input id="buy_address2" name="buy_address2" type="text" placeholder="Flat/House No Colony/Street" class="form-control input-md">
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_pincode">Pincode</label>  
+			  <div class="col-md-4">
+			  <input id="buy_pincode" name="buy_pincode" type="text" placeholder="6 digit pincode" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_city">City</label>  
+			  <div class="col-md-5">
+			  <input id="buy_city" name="buy_city" type="text" placeholder="City" class="form-control input-md" required>
+			    
+			  </div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="buy_state">State</label>
+			  <div class="col-md-5">
+			    <select id="buy_state" name="buy_state" class="form-control">
+			      <option value="1">Select State</option>
+			      <option value="2">Delhi</option>
+			      <option value="3">Uttar Pradesh</option>
+			    </select>
+			  </div>
+			</div>
+
+			<!-- Select Basic -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="country">Country</label>
+			  <div class="col-md-5">
+			    <select id="country" name="country" class="form-control">
+			      <option value="1">Select Country</option>
+			      <option value="2">India</option>
+			    </select>
+			  </div>
+			</div>
+
+            <div class="form-group">
+				<div>
+				    <button type="submit" class="btn btn-success form-control">Make Payment</button>
+				</div>
+			</div>
+
+			</fieldset>
+		</form>
+	</div>
+</div>

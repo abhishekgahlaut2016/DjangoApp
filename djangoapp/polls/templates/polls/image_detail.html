@@ -1,0 +1,101 @@
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/polls/style.css" />
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Shop Now</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" action="/polls/login/">
+            <div class="form-group">
+              <input type="text" name="login_email" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" name="login_password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+            <a href="register/">Sign Up</a>
+            <a href="/polls/logout/" style="float: right; color:#ffffff;">Logout</a>
+          </form>
+        </div><!--/.navbar-collapse -->
+    <div>
+      <a style="float: right; color:#ffffff;">{{ login_email }}</a>
+    </div>    
+    <div class="dropdown">
+      <button class="dropbtn">ELECTRONICS</button>
+      <div class="dropdown-content">
+        <a href="#">Mobiles</a>
+        <a href="#">Laptops</a>
+        <a href="#">TVs</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">MEN</button>
+      <div class="dropdown-content">
+        <a href="#">Footwear</a>
+        <a href="#">Clothing</a>
+        <a href="#">Watches</a>
+      </div>
+    </div>
+    </div>
+    <div>
+      <a href="/polls/cart_items/" class="btn btn-success" style="float: right;">CART <span id="timesClicked">{{ no_of_cart_items }}</span></a>
+    </div>
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!-- <form accept-charset="UTF-8" action="/polls/buy_product/"> -->
+    <form accept-charset="UTF-8">
+    <div class="colmd-12">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <img src="{{image_name}}" height="400" width="300" />
+        </div> 
+        <div class="col-md-8">
+            <h3>{{ prod_name }}</h3>
+            <div><b>Description:</b> {{ prod_desc }}</div>
+            <div><b>Manufacturer:</b> {{ prod_manufacturer }} </div>
+            <div><b>Price:</b> $ {{ prod_price }} </div>
+            <div class="btn-group cart">
+                <a href="/polls/add_to_cart/?prod_id={{ prod_id }}&price={{ prod_price }}" class="btn btn-success" onclick="javascript:btnClick({{ no_of_cart_items }})" target="_blank">ADD to CART</a>
+                <a href="/polls/buy_product/" class="btn btn-success">BUY NOW</a>
+                <!-- <button type="button" class="btn btn-success">ADD to CART</button>
+                <button type="submit" class="btn btn-success">BUY NOW</button> -->
+            </div>
+        </div>   
+    </div>
+    </form>
+
+    <script src="/static/polls/js/app.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>

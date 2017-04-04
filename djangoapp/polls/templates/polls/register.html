@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<div class="span3 well">
+    <legend>Sign up!</legend>
+    <form accept-charset="UTF-8" action="/polls/register_user/" method="post">
+        {% csrf_token %}
+		<input class="span3" name="signup_email" placeholder="Email" type="text"> 
+		<input class="span3" name="signup_mobile" placeholder="Mobile" type="text">
+        <input class="span3" name="signup_password" placeholder="Password" type="password">
+        <input class="span3" name="signup_confirm_password" placeholder="Confirm Password" type="password"> 
+        <button class="btn btn-warning" type="submit">Sign up</button>
+    </form>
+</div>

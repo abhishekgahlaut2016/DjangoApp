@@ -1,0 +1,73 @@
+
+
+<div class="container" style="padding-top:100px; min-height:650px; ">
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Hello <span>{{customer_fname}}</span></h3>
+        </div>
+        <div class="panel-body"> 
+        <div style="display:{{done}}">
+        <p>{{state}}<p>
+        <p>
+          Thank you for purchasing a BarLinePass for <b>{{merchant_name}}</b> 
+        </p>
+        <p>
+          Please go to the front and show the bouncer your BLP QR code for entry on <b>{{blp_date}}</b>.If the QR code isn’t populating below, check your email as we sent confirmation to the email you entered during payment as well. 
+        </p>
+
+
+<div class="row">
+  <div class="col-md-12">
+    {% for e in image_ids %}
+ <div class="col-md-2" style="margin-bottom:20px;">
+        <img src="{{url}}media/QR-CODE-{{ e }}.png" > 
+       </div>
+      {% endfor %}
+   
+
+  </div>
+</div>
+<div class="row">
+<div class="col-md-12">
+   <p>
+
+          Also, stay tuned for the BLP reward system coming soon. The more BLP’s you purchase, the more points you earn towards a free line skip. Enjoy skipping the line at your favorite venues!
+
+           </p>
+
+
+
+</div>
+</div> 
+
+          
+          
+
+          </div>
+          <div style="display:{{error}}" class="content">
+            <p>
+
+            “Oops!  Your payment was declined.  Please select your venue and reserve again.”
+            </p>
+            <div style="text-align:center">
+            <a href="{{url}}"><button class="btn-blue-outline btn-save hvr-radial-out"  >Try Again</button></a>
+          </div>
+          </div>
+        </div>
+
+
+</div>
+</div>
+
+    
+       
+       
+       
+
+          
+   
+
+
+                      
+
+
