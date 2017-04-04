@@ -106,7 +106,7 @@ def login(request):
         context.update({'login_email':email})
         return render(request, 'polls/index.html', context)
 
-    return HttpResponse('Invalid Email / Password')
+    return HttpResponse('Invalid Email / Password')o
 
 
 def logout(request):
@@ -115,6 +115,32 @@ def logout(request):
     except KeyError:
         pass
     return HttpResponse("Logged Out")    
+
+
+
+def products(request):
+    """
+        Get Products Category wise
+    """
+    prod_image_list = []
+    email = ''
+
+    user_id = request.session.get('user_id')
+    get_user = Register.objects.filter(id=user_id)
+    if get_user:
+      email = get_user[0].email
+
+    if request.GET:
+        categ_seq = request.GET.get('categ_seq',0)
+        if categ_seq:
+            categ_seq = int(categ_seq)
+            categ_id = ProductCategory.objects.get(sequence=categ_seq)
+            all_products = ProductImage.objects.filter(product_categ_id=categ_id.id)
+            if all_products:
+              for val in all_products:
+                prod_image = str(val.product_image).split('polls',1)[1]
+                prod_image_list.append(prod_image)
+    return render(request, 'polls/category_wise_products.html', {'prod_image_list':prod_image_list, 'login_email':email})  
 
 
 class cart_form(forms.ModelForm):

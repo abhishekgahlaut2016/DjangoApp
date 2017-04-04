@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^image_detail/$', views.image_detail, name='image_detail'),
     url(r'^add_to_cart/$', views.add_to_cart, name='add_to_cart'),
     url(r'^cart_items/$', views.cart_items, name='cart_items'),
+    url(r'^products/$', views.products, name='products'),
     url(r'^buy_product/$', views.buy_product, name='buy_product'),
     url(r'^payment/$', views.make_payment, name='make_payment'),
     url(r'^paypal_process/$', views.paypal_process, name='paypal_process'),
